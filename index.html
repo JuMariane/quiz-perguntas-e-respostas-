@@ -1,0 +1,87 @@
+<!---a ideia é criar um quiz interativo que vai chamar o quiz.js:
+//a ideia aqui é mostrar perguntas simples de quiz, por exemplo: "Qual a capital do Brasil?"
+//e o usuário deve responder corretamente para ganhar pontos
+// esse quiz está linkado o index.html
+// e o arquivo quiz.js está linkado no index.html
+
+//a ideia aqui é mostrar perguntas simples de quiz, por exemplo: "Qual a capital do Brasil?"
+//e o usuário deve responder corretamente para ganhar pontos
+// esse quiz está linkado o index.html
+// e o arquivo quiz.js está linkado no index.html
+//a ideia aqui é mostrar perguntas simples de quiz, por exemplo: "Qual a capital do Brasil?"
+//e o usuário deve responder corretamente para ganhar pontos
+// esse quiz está linkado o index.html
+// e o arquivo quiz.js está linkado no index.html
+
+//começo:
+perguntas = [
+  {
+    pergunta: "Qual a capital do Brasil?",
+    resposta: "brasilia",
+  },
+  {
+    pergunta: "Qual a capital da França?",
+    resposta: "paris",
+  },
+  {
+    pergunta: "Qual a capital da Argentina?",
+    resposta: "buenos aires",
+  },
+  {
+    pergunta: "Qual a capital do Chile?",
+    resposta: "santiago",
+  },
+];
+
+//função para mostrar uma pergunta que quando tocar no botão "próximo" irá corrigir o input, pontuar e mostrar a resposta. Quando clicar no próximo de novo irá mostrar a próxima pergunta
+let perguntaAtual = 0;
+let pontos = 0;
+function mostrarPergunta() {
+  let pergunta = perguntas[perguntaAtual];
+  let resposta = document.getElementById("resposta").value;
+  if (resposta.toLowerCase() === pergunta.resposta) {
+    pontos++;
+  }
+  document.getElementById("pergunta").innerText = pergunta.pergunta;
+  document.getElementById("resposta").value = "";
+  document.getElementById("pontos").innerText = pontos;
+  document.getElementById("resposta-correta").innerText = pergunta.resposta;
+  perguntaAtual++;
+}
+
+//função para mostrar a primeira pergunta
+mostrarPergunta();
+
+//função para mostrar a próxima pergunta
+document.getElementById("proximo").addEventListener("click", mostrarPergunta);
+
+//fim
+
+
+
+!-->
+
+<html>
+  <head>
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Quiz</h1>
+      <fieldset id="pontuacao">
+        <legend>Pontuação</legend>
+
+        <span id="pontos">0</span>
+      </fieldset>
+      <p id="pergunta"></p>
+      <input type="text" id="resposta" />
+      <button id="proximo">Próximo</button>
+      <p id="resposta-correta-title">
+        Resposta correta da pergunta anterior:
+        <span id="resposta-correta"></span>
+      </p>
+    </center>
+    <script src="quiz.js"></script>
+  </body>
+</html>
