@@ -14,4 +14,4 @@ O usuário deve responder corretamente as perguntas para ganhar pontos. Se errar
 
 ## Como rodar o projeto
 Basta abrir o arquivo index.html no seu navegador.
-ou acessar o link: https://quiz-perguntas-e-respostas.netlify.app/
+[Acesse o link da pagina clicando aqui](https://jumariane.github.io/quiz.github.io/)
